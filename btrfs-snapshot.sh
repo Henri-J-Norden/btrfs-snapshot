@@ -169,6 +169,9 @@ for ((i=$snap_max; i > 0; i--)); do
     fi
 done
 
+# Update modified time to track backup creation date with ls
+touch "$filesystem"
+
 # Create snapshot
 $BTRFS subvolume snapshot -r "$filesystem" \
     "${snap_root}/${snap_name}.0" >/dev/null
