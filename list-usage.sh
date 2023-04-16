@@ -8,4 +8,5 @@ if [ -z "$filesystem" ]; then
     exit 1
 fi
 
+# https://unix.stackexchange.com/a/740201
 btrfs filesystem du -s "$filesystem"/.snapshot/*
