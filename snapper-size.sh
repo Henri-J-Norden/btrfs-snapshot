@@ -12,8 +12,7 @@ fi
 
 
 # https://github.com/dim-geo/btrfs-snapshot-diff
-#sed -i "s#<\(description\)>\([^\t]*\)\(\t.*\)\?</\1>#<\1>\2\t3MB</\1>#g" info.xml
-btrfs quota enable $path
+#btrfs quota enable $path
 warn=$(btrfs qgroup show "$path" 2>&1 > /dev/null)
 
 if [ -z "$warn" ]; then
